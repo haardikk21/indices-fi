@@ -8,7 +8,8 @@ Indices leverages decentralized exchanges built on NEAR, such as Ref Finance, to
 ## Video
 
 Watch this YouTube video if you don't like reading :)
-// TODO
+
+https://youtu.be/umD3PGXAldo
 
 ## Why?
 

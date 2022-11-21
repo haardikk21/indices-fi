@@ -1,0 +1,5 @@
+export const INDICES_CONTRACT_ID = 'guest-book.testnet'
+export const MANAGER_CONTRACT_ID = 'indices-finance.testnet'
+export const TESTNET_NODE_URL = 'https://rpc.testnet.near.org'
+export const THREE_HUNDRED_TGAS = '300000000000000'
+export const WNEAR_CONTRACT = 'wrap.testnet'

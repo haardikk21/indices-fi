@@ -1,0 +1,17 @@
+{
+  "name": "indices-finance",
+  "version": "1.0.0",
+  "description": "Indices Finance",
+  "author": "Ben Kurrek",
+  "license": "ISC",
+  "scripts": {
+    "build": "./build.sh",
+    "clean-deploy": "rm -rf neardev && npm run deploy",
+    "deploy": "./deploy.sh",
+    "deploy-new-index": "./scripts/deploy_new_index.sh",
+    "manager-init": "./scripts/manager_init.sh",
+    "get-index-tokens": "./scripts/get_index_tokens.sh",
+    "buy-token": "./scripts/buy_index_token.sh",
+    "redeem-token": "./scripts/redeem_token.sh"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "hello_near",
+  "version": "1.0.0",
+  "license": "(MIT AND Apache-2.0)",
+  "type": "module",
+  "scripts": {
+    "build": "./build.sh",
+    "deploy": "./deploy.sh",
+    "test": "echo use integration-tests"
+  },
+  "dependencies": {
+    "near-cli": "^3.4.0",
+    "near-sdk-js": "^0.6.0-0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "compilerOptions": {
+    "lib": [
+      "es2020"
+    ],
+    "module": "commonjs",
+    "target": "es2019"
+  }
+}

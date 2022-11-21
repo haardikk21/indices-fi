@@ -35,6 +35,7 @@ The manager contract is responsible for a couple of core actions:
 
 1. Keeping track of all index funds created through Indices
 2. Letting users deploy their own index funds
+
    2.1 This action creates a subaccount, and deploys an **Index** contract to that subaccount.
 
 The manager contract is currently deployed to `indices-finance.testnet` on the NEAR Testnet.
@@ -76,8 +77,11 @@ Once this information is provided, the **Manager** contract kicks in and does it
 1. It creates a new subaccount at `${name}.indices-finance.testnet`
 2. It deploys the **Index** contract to that subaccount
 3. It initializes the **Index** contract
+
    3.1 It initializes the Index FT token and sets metadata
+
    3.2 It registers all underlying tokens with Ref Exchange in case creator adds a non-whitelisted token
+
    3.3 It creates storage deposits in individual underlying token FT contracts for the new subaccount
 
 Once this process is done, the new subaccount is tracked by the **Manager** contract and included in a vector of index token `AccountId`s.
@@ -106,11 +110,15 @@ This fires off the `buy_index_token` method in the **Index** contract, leading t
 2. The contract converts NEAR to wNEAR through `wrap.testnet`
 3. The wNEAR is deposited to Ref Exchange
 4. The contract executes `swap`s on Ref Exchange for wNEAR to each of the underlying tokens
+
    4.1 These actions happen in parallel through the use of `.and()` chaining
+
 5. Then, a callback accumulates the amounts of each tokens we received from Ref after the swaps
 6. The callback ensures we got greater than or equal amount of tokens from each swap as expected
 7. Then, `withdraw`s are fired off on Ref Exchange to withdraw all those tokens into the **Index** contract
+
    7.1 These actions happen in parallel through the use of `.and()` chaining
+
 8. Once all tokens are withdrawns, new $NAME (Index Token Symbol) tokens are minted
 9. The user receives Index Tokens, representing their share in the fund
 
